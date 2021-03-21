@@ -1,0 +1,19 @@
+{
+  "name": "sniff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "lodash": "^4.17.21",
+    "node-html-parser": "^3.1.0",
+    "pngjs": "^6.0.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
