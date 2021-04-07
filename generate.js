@@ -6,10 +6,10 @@ const { parse } = require('node-html-parser');
 const _range = require('lodash/range')
 
 
-const DIR = `${__dirname}/air-gear/`
-// const RANGE = [147.5]
-// const RANGE = [147.5,119.5,]
-const RANGE = _range(0,37).map(a => a + 1)
+const DIR = `${__dirname}/the-breaker-new-waves/`
+const RANGE = [39]
+
+// const RANGE = _range(10,52).map(a => a + 1)
 const RETRY = 2
 
 async function asyncForEach(array, callback) {
@@ -116,7 +116,7 @@ async function writeChapter(numc) {
         //     },
         // )
 
-        const {data} = await axios.get(`https://www.scan-fr.cc/manga/air-gear/${numChapter}/1`)
+        const {data} = await axios.get(`https://www.scan-fr.cc/manga/the-breaker-new-waves/0${numChapter}/1`)
         const html = parse(data)
         const is = html.querySelectorAll('script') || []
 
@@ -125,6 +125,7 @@ async function writeChapter(numc) {
             match.toString().lastIndexOf("var pages = [") + 12, 
             match.toString().lastIndexOf(":1}];")
         ) + ":1}]"
+
 
         await asyncForEach(
             JSON.parse(string),
